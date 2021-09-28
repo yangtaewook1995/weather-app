@@ -27,6 +27,8 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    }
+    },
+    "description": "API \nhttps://openweathermap.org\n",
+    "githubUrl": "https://github.com/yangtaewook1995/weather-app"
   }
 }

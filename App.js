@@ -24,6 +24,7 @@ export default class App extends React.Component {
       `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=${API_KEY}&units=metric`
     );
     this.setState({ temp: temp, condition: weather[0].main });
+    this.setState({ isLoading: false });
   };
 
   getLocation = async () => {
@@ -33,7 +34,7 @@ export default class App extends React.Component {
         coords: { latitude, longitude },
       } = await Location.getLastKnownPositionAsync();
       this.getCurrentWeather(latitude, longitude);
-      this.setState({ isLoading: false });
+      // this.setState({ isLoading: false });
     } catch (error) {
       Alert.alert("Cant find you.", "So sad");
     }
